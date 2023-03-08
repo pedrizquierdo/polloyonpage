@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Slideshow below Bar Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+		*{ 
+		margin: 0;
+			padding: 0
+		}
+        body {
+    background-color: #F8F1FA;
+    font-family: "Cooper Black";
+    color: #C5992B;
+    }
+    /* CSS for bar menu */
+    #menu {
+      background-color: #E0E0E0;
+      overflow: hidden;
+      position: relative; /* add this for positioning child elements */
+    }
+
+    #menu a {
+      float: left;
+      color: rebeccapurple;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", sans-serif;
+      font-size: 22px;
+      top: 0%;
+    }
+
+    #menu a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    #menu #home-button {
+    background-image: url(Images/polloyonhome.png); /* Replace with your image file */
+    background-repeat: no-repeat;
+    background-size: contain; /* Replace with your image size */
+    display: inline-block;
+    width: 35px; /* Replace with your image width */
+    height: 30px; /* Replace with your image height */
+    margin-right: 5px;
+    top: auto;
+    background-position: center 0%;
+    }
+
+    /* CSS for social media buttons */
+    #social-media {
+      position: absolute; /* add this for positioning */
+      top: 50%; /* position in the middle of the menu */
+      right: 16px; /* position at the right edge */
+      transform: translateY(-50%); /* vertically center */
+    }
+
+    #social-media a {
+      display: inline-block;
+      margin-left: 10px;
+      color: #666;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    #social-media a:hover {
+      color: #111;
+    }
+
+    /* Font Awesome icons for social media buttons */
+    #social-media .fa {
+      font-size: 24px;
+      margin-right: 5px;
+    }
+
+        /* CSS for map container */
+        #map-container {
+    margin: 0 auto;
+    max-width: 1000px;
+    text-shadow: 3px 3px #36088A;
+    font-size: 24px;
+        }
+		
+		form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px #ccc;
+    font-family: "Cooper Black";
+    color: #553103;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    height: 50%;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+input:invalid,
+textarea:invalid {
+  border-color: #ff0000;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px #4CAF50;
+}
+
+		#container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#map-container {
+    flex-basis: 50%;
+    margin-right: 20px;
+    color: #FFE03F;
+    font-family: "Cooper Black";
+}
+
+form {
+  flex-basis: 40%;
+}
+
+		.button-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 20px;
+  margin: 50px;
+}
+
+.button-box a {
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+
+.button-box img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+		
+		/* Footer styles */
+      footer {
+        background-color: #E0E0E0;
+        color: rebeccapurple;
+        text-align: center;
+        padding: 20px;
+      }
+
+      footer p {
+        margin: 0;
+      }
+    </style>
+</head>
+<body>
+    <!-- Bar Menu -->
+    <div id="menu">
+        <a href="Paginadw\index.html" id="home-button"></a> <!-- Home button as image -->
+        <a href="Paginadw\Nosotros.html">Nosotros</a>
+        <a href="Paginadw\Menu.html">Menú</a>
+        <a href="Paginadw\Contactanos.html">Contacto</a>
+        <!-- Social media buttons -->
+        <div id="social-media">
+            <a href="https://web.facebook.com/profile.php?id=100066565675002"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/el_polloyon?lang=es"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/polloyon2023/?igshid=ZDdkNTZiNTM%3D"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+
+   <div id="container">
+  <!-- Map container -->
+  <div id="map-container">
+    <h1>Visítanos</h1>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3485.3822577134656!2d-110.98047694938803!3d29.123913582139288!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ce86bf1d3a2613%3A0xfb77ed88a2ca17b!2sEl%20PolloYon!5e0!3m2!1ses-419!2smx!4v1678037974688!5m2!1ses-419!2smx" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+  <!-- Email form -->
+  <form action="php\php_polloyon.php" method="post">
+    <h2>Hable con Nosotros</h2>
+    <input type="hidden" name="name" value="Cliente">
+    <input type="hidden" name="email" value="pedro.izquierdo3005@gmail.com">
+    <input type="hidden" name="subject" value="Mensaje de cliente">
+    <label for="message">Mensaje:</label>
+    <textarea id="message" name="message" required></textarea>
+    <input type="submit" value="Enviar">
+  </form>
+</div>
+
+	<h3>Redes Sociales</h3>
+<div class="button-box">
+  <a href="https://www.instagram.com/polloyon2023/?igshid=ZDdkNTZiNTM%3D">
+    <img src="Images\instagram.png" alt="Button 1">
+  </a>
+  <a href="https://web.facebook.com/profile.php?id=100066565675002">
+    <img src="Images\Facebook_f_logo.png" alt="Button 2">
+  </a>
+  <a href="https://twitter.com/el_polloyon?lang=es">
+    <img src="Images\twitter_logo2.png" alt="Button 3">
+  </a>
+</div>
+	<footer>
+      <p>&copy; 2023 ElPolloYon IP LLC. Todos los derechos resevados.</p>
+    </footer>
+</body>
+</html>

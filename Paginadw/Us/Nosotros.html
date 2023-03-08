@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Slideshow below Bar Menu</title>
+	<script src="C:\Users\pedro\OneDrive\Documentos\Paginadw\js\javascript_video_popup.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+    <style>
+	  body {
+      background-color: #F8F1FA;
+    }
+    /* CSS for bar menu */
+    #menu {
+      background-color: #E0E0E0;
+      overflow: hidden;
+      position: relative; /* add this for positioning child elements */
+    }
+
+    #menu a {
+      float: left;
+      color: rebeccapurple;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", sans-serif;
+      font-size: 22px;
+      top: 0%;
+    }
+
+    #menu a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    #menu #home-button {
+    background-image: url(Images/polloyonhome.png); /* Replace with your image file */
+    background-repeat: no-repeat;
+    background-size: contain; /* Replace with your image size */
+    display: inline-block;
+    width: 35px; /* Replace with your image width */
+    height: 30px; /* Replace with your image height */
+    margin-right: 5px;
+    top: auto;
+    background-position: center 0%;
+    }
+
+    /* CSS for social media buttons */
+    #social-media {
+      position: absolute; /* add this for positioning */
+      top: 50%; /* position in the middle of the menu */
+      right: 16px; /* position at the right edge */
+      transform: translateY(-50%); /* vertically center */
+    }
+
+    #social-media a {
+      display: inline-block;
+      margin-left: 10px;
+      color: #666;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    #social-media a:hover {
+      color: #111;
+    }
+
+    /* Font Awesome icons for social media buttons */
+    #social-media .fa {
+      font-size: 24px;
+      margin-right: 5px;
+    }
+
+	  /* CSS for container */
+      .slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    font-family: "Cooper Black";
+    color: #FFE03F;
+    text-shadow: 0px 0px #36088A;
+      }
+
+      /* CSS for gif */
+      .slideshow-gif {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        animation: fade-in 1s;
+      }
+
+      /* CSS for title */
+      .slideshow-title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 43px;
+        font-weight: bold;
+        font-family: "Britannic Bold", "Cooper Black", "Berlin Sans FB Demi", "Showcard Gothic";
+        color: #FFE03F;
+        text-shadow: 3px 3px #36088A;
+        margin: 0;
+        padding: 0;
+        z-index: 1;
+      }
+		
+	  /* CSS for new text element */
+  .slideshow-text {
+    position: absolute;
+    top: 70%; /* Adjust position as needed */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #FFE03F;
+    text-align: center;
+    z-index: 1;
+  }
+		
+	  /* CSS for image with text */
+	  .image-text-container {
+  	    display: flex;
+	    align-items: center;
+	    margin-top: 50px;
+	  }
+
+	  .image {
+    width: 800px;
+    height: 300px;
+    object-fit: cover;
+    margin-right: 50px;
+	  }
+
+	  .text {
+    font-size: 24px;
+    line-height: 1.5;
+    color: #966E51;
+    font-family: "Cooper Black";
+      }
+
+	  /* CSS for text container */
+.text-container {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.text-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #553103;
+    font-family: "Cooper Black";
+}
+
+.text-container p {
+    font-size: 22px;
+    line-height: 1.5;
+    margin: 0;
+    color: #966E51;
+    font-family: "Cooper Black";
+    text-shadow: 0px 0px;
+}
+		
+		/* CSS for text and video container */
+.text-video-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-video-container .text {
+    font-size: 43px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #FFE03F;
+    text-shadow: 3px 3px #36088A;
+}
+
+.text-video-container .video {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+}
+
+		
+	/* Footer styles */
+      footer {
+        background-color: #E0E0E0;
+        color: rebeccapurple;
+        text-align: center;
+        padding: 20px;
+      }
+
+      footer p {
+        margin: 0;
+      }
+    </style>
+<body>
+    <!-- Bar Menu -->
+    <div id="menu">
+        <a href="C:\Users\pedro\OneDrive\Documentos\Paginadw\index.html" id="home-button"></a> <!-- Home button as image -->
+        <a href="C:\Users\pedro\OneDrive\Documentos\Paginadw\Nosotros.html">Nosotros</a>
+        <a href="C:\Users\pedro\OneDrive\Documentos\Paginadw\Menu.html">Menú</a>
+        <a href="C:\Users\pedro\OneDrive\Documentos\Paginadw\Contactanos.html">Contacto</a>
+        <!-- Social media buttons -->
+        <div id="social-media">
+            <a href="https://web.facebook.com/profile.php?id=100066565675002"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/el_polloyon?lang=es"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/polloyon2023/?igshid=ZDdkNTZiNTM%3D"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+
+  <!-- Slideshow container -->
+<div class="slideshow-container">
+  <img src="C:\Users\pedro\OneDrive\Documentos\Paginadw\Images\POLLO.gif" alt= "Pollo en el Asador" class="slideshow-gif">
+  <div class="slideshow-title">Somos sinónimo de Sabor</div>
+  <div class="slideshow-text">Creemos en el poder de la comida para unir a las familias y crear momentos inolvidables, y trabajamos arduamente para hacer que cada visita a nuestra empresa sea una experiencia satisfactoria y agradable para toda la familia. Esperamos tener la oportunidad de servirles y de ser parte de sus memorias más preciadas.</div> <!-- New text element -->
+</div>
+
+<style>
+  /* CSS for new text element */
+  .slideshow-text {
+    position: absolute;
+    top: 70%; /* Adjust position as needed */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+    z-index: 1;
+  }
+</style>
+	  
+<!-- Image with text container -->
+<div class="image-text-container">
+  <img src="C:\Users\pedro\OneDrive\Documentos\Paginadw\Images\polloyon_local.jpg" alt= "Instalaciones" class="image">
+  <div class="text">Visión: Ser la empresa líder en la preparación y venta de pollos asados estilo Sinaloa, reconocidos por la calidad de nuestros productos y la excelencia en el servicio al cliente. </div>
+</div>
+	  
+	<!-- Image with text container -->
+<div class="image-text-container inverted">
+  <div class="text">Misión: Ofrecer a nuestros clientes una experiencia culinaria única a través de la preparación de pollos asados estilo Sinaloa, utilizando ingredientes frescos y de alta calidad, y un proceso de cocción lento y tradicional que garantice la jugosidad y sabor inigualable de nuestros productos. </div>
+  <img src="C:\Users\pedro\OneDrive\Documentos\Paginadw\Images\pollochikenreal.png" alt="Nuestro Producto" class="image">
+</div>
+
+	<!-- Text container -->
+  <div class="text-container">
+    <h2>Valores:</h2>
+    <p><strong>Calidad:</strong> <strong><em>Nos esforzamos por utilizar solo los mejores ingredientes y procesos de cocción para garantizar la calidad de nuestros productos. </em> </strong></p>
+    <p> <strong> Tradición:</strong> <em>Nos enorgullecemos de mantener la autenticidad y tradición de los pollos asados estilo Sinaloa, y trabajamos arduamente para llevar esta deliciosa receta a todo el mundo. </em></p>
+    <p><strong>Servicio:</strong> <em>Nos esforzamos por brindar un servicio excepcional a nuestros clientes, y tratamos de hacer que cada visita a nuestra empresa sea una experiencia satisfactoria y memorable. </em></p>
+    <p> <strong>Responsabilidad:</strong> <em>Nos comprometemos a operar de manera responsable y sostenible, cuidando el medio ambiente y respetando a nuestros empleados y clientes. </em></p>
+<p> <strong>Innovación:</strong> <em>Buscamos constantemente formas innovadoras de mejorar nuestros productos y servicios, y estamos abiertos a nuevas ideas y tecnologías que puedan ayudarnos a seguir creciendo y evolucionando.</em></p>
+  </div>
+
+		<!-- Text with video container -->
+<div class="text-video-container">
+  <div class="text">Somos familia, somos Pollo Yon </div>
+  <video src="C:\Users\pedro\OneDrive\Documentos\Paginadw\Videos\polloyon_AdobeExpress.mp4" autoplay loop muted class="video"></video>
+</div>
+	
+	  <footer>
+      <p>&copy; 2023 ElPolloYon IP LLC. Todos los derechos resevados.</p>
+    </footer>
+  </body>
+</html>
